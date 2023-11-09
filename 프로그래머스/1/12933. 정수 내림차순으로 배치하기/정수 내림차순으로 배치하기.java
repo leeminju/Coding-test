@@ -1,36 +1,32 @@
 import java.util.*;
+
 class Solution {
 	public long solution(long n) {
 		long answer = 0;
-		int[] arr;
-		ArrayList<Integer> list = new ArrayList<>();
+		long[] arr;
+		ArrayList<Long> list = new ArrayList<>();
 		int idx = 0;
-		int a = 0;
 
-		while (n / 10 >= 0) {
-			long q = n / (long) 10;
-			long r = n % (long) 10;
-			list.add((int) r);
-
+		while (n > 0) {
+			long r = n % 10;
+			list.add(r);
 			idx++;
-			n = q;
-
-			if (q == 0)
-				break;
+			n /= 10;
 		}
-		arr = new int[idx];
+        
+		arr = new long[idx];
+        
 		for (int i = 0; i < idx; i++)
 			arr[i] = list.get(i);
 
-		Integer[] array = Arrays.stream(arr).boxed().toArray(Integer[]::new);
+		long[] array = list.stream().mapToLong(i->i).toArray();
 
-		Arrays.sort(array, Collections.reverseOrder());
+		Arrays.sort(array);
+        idx--;
 
 		for (int i = array.length - 1; i >= 0; i--) {
-			answer += (long) Math.pow(10, a++) * array[i];
+			answer += (long) Math.pow(10, idx--) * array[i];
 		}
-
-		System.out.println(answer);
 
 		return answer;
 	}
