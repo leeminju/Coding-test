@@ -15,10 +15,7 @@ class Solution {
 		}
         
 		arr = new long[idx];
-        
-		for (int i = 0; i < idx; i++)
-			arr[i] = list.get(i);
-
+    
 		long[] array = list.stream().mapToLong(i->i).toArray();
 
 		Arrays.sort(array);
