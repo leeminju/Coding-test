@@ -3,7 +3,6 @@ import java.util.*;
 class Solution {
 	public long solution(long n) {
 		long answer = 0;
-		long[] arr;
 		ArrayList<Long> list = new ArrayList<>();
 		int idx = 0;
 
@@ -14,8 +13,6 @@ class Solution {
 			n /= 10;
 		}
         
-		arr = new long[idx];
-    
 		long[] array = list.stream().mapToLong(i->i).toArray();
 
 		Arrays.sort(array);
