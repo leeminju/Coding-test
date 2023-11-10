@@ -6,6 +6,10 @@
 
 메모리: 81.4 MB, 시간: 2.85 ms
 
+![image](https://github.com/leeminju/Coding-test/assets/19209147/6ef55710-4f43-456a-86e5-0224dea00b06)
+
+
+
 ### 구분
 
 코딩테스트 연습 > 연습문제
