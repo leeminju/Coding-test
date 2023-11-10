@@ -1,8 +1,7 @@
 class Solution {
     public String solution(String s) {
         String answer = "";
-        int j=0;
-        for(int i=0;i<s.length();i++,j++){    
+        for(int i=0, j=0;i<s.length();i++,j++){    
             char c = s.charAt(i);
 
             if(c == ' '){
