@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Main {
+class 숫자카드게임 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int N = sc.nextInt();
