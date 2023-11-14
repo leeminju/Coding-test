@@ -18,7 +18,7 @@ class Solution {
             if(Arrays.asList(front).contains("Kim")){
                 last = mid;
             }else{
-                start = mid;
+                start = mid+1;
             }
         }
         return "";
