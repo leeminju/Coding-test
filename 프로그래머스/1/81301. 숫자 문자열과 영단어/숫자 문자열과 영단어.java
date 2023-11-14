@@ -2,16 +2,16 @@ import java.util.*;
 
 class Solution {
    
-    
     public int solution(String s) {
         String ans = "";
         String[] array = {"zero", "one", "two", "three", "four", "five",
                 "six", "seven", "eight", "nine"};
 
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < s.length(); ) {
             char c = s.charAt(i);
             if (c >= '0' && c <= '9') {
                 ans += c;
+                i++;
                 continue;
             }
 
@@ -24,7 +24,7 @@ class Solution {
 
                 if (word.equals(temp)) {
                     ans += j;
-                    i += word.length()-1;
+                    i += word.length();
                     break;
                 }
             }
