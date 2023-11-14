@@ -9,15 +9,11 @@ class Solution {
                 continue;
             }
             
-            if(c+n > 'z'){
+            if((c+n > 'z')||(c+n > 'Z' && c < 'a')){
                 answer += (char)(c-26+n);;
                 continue;
             }
             
-            if(c+n > 'Z' && c < 'a'){
-                answer += (char)(c-26+n);;
-                continue;
-            }
                 
                 
             answer += (char)(c+n);
