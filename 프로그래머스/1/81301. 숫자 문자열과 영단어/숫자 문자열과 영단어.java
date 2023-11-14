@@ -5,8 +5,8 @@ class Solution {
     
     public int solution(String s) {
         String ans = "";
-        List<String> list = List.of("zero", "one", "two", "three", "four", "five",
-                "six", "seven", "eight", "nine");
+        String[] array = {"zero", "one", "two", "three", "four", "five",
+                "six", "seven", "eight", "nine"};
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
@@ -16,7 +16,7 @@ class Solution {
             }
 
             for (int j = 0; j <= 9; j++) {
-                String word = list.get(j);
+                String word = array[j];
                 if (i + word.length() > s.length())
                     continue;
 
