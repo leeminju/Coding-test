@@ -1,9 +1,8 @@
 class Solution {
     public String solution(String s, int n) {
         String answer = "";
-        char[] arr=s.toCharArray();
         
-        for(char c:arr){
+        for(char c:s.toCharArray()){
             if(c == ' '){
                 answer += " ";
                 continue;
@@ -14,8 +13,6 @@ class Solution {
                 continue;
             }
             
-                
-                
             answer += (char)(c+n);
         }
         
