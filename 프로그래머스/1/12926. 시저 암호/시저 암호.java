@@ -8,12 +8,13 @@ class Solution {
                 continue;
             }
             
-            if((c+n > 'z')||(c+n > 'Z' && c < 'a')){
-                answer += (char)(c-26+n);;
-                continue;
+            if(Character.isUpperCase(c))
+            {
+                 answer += (char) ((c - 'A' + n) % 26 + 'A');
+            }else{
+                 answer += (char) ((c - 'a' + n) % 26 + 'a');
             }
-            
-            answer += (char)(c+n);
+    
         }
         
         return answer;
