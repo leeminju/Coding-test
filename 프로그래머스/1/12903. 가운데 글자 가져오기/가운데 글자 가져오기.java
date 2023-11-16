@@ -4,8 +4,7 @@ class Solution {
         int mid = s.length()/2;
         if(s.length()%2 ==0 ){
             //짝수면
-            answer += s.charAt(mid-1);
-            answer += s.charAt(mid);
+            answer += s.substring(mid-1,mid+1);
         }else{
             answer += s.charAt(mid);
         }
