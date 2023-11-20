@@ -1,4 +1,3 @@
-import java.util.*;
 class Solution {
     public int solution(int n, int[][] computers) {
         int answer = 0;
@@ -18,7 +17,7 @@ class Solution {
         visited[v] = true;
 
         for (int i=0;i<array[v].length ; i++) {
-            if (array[v][i] == 1 &&   !visited[i]) {
+            if (v!= i && array[v][i] == 1 &&   !visited[i]) {
                 dfs(array, i, visited);
             }
         }
