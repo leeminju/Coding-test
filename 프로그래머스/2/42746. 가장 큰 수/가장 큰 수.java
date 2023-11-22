@@ -2,6 +2,9 @@ import java.util.*;
 class Solution {
     public String solution(int[] numbers) {
         String answer = "";
+        
+        //String[] strs = Arrays.stream(numbers).mapToObj(String::valueOf).toArray(String[]::new);
+        
         String[] strs = new String[numbers.length];
         
         for(int i=0;i<strs.length;i++){
@@ -19,13 +22,10 @@ class Solution {
             }
         });
         
-    
+        answer = String.join("",strs);
+ 
         
-        for(String str : strs){
-            answer += str;
-        }
-        
-        if(answer.charAt(0)=='0'){
+         if(answer.charAt(0)=='0'){
             return "0";
         } 
         
