@@ -12,7 +12,7 @@ class Solution {
         for(int i=0;i<n;i++)
         {
             if(citations[i] > n-i){ 
-                if(h <= n-i){
+                if(h < n-i){
                     h = n-i;
                 }       
                 break;
