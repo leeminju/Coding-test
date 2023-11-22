@@ -1,30 +1,22 @@
 import java.util.*;
-
 class Solution {
     public int solution(int[] citations) {
-        int cnt = 0;// 0 ~ n  사이
-        int h = 0;
+        int answer = 0;
         int n = citations.length;
         
-        
         Arrays.sort(citations);
-               
-        for(int i=0;i<n;i++)
-        {
-            if(citations[i] > n-i){ 
-                if(h <= n-i){
-                    h = n-i;
-                    cnt = n-i;
-                }       
+        
+      //  h = citataions[0]  => n-0 = 5;
+      //  h = citataions[1]  => n-1 = 4;
+        
+        for(int i=n-1;i>=0;i--){
+            if(citations[i] == n-i){
+                answer = citations[i];
                 break;
             }
-            
-            cnt = n-i;//갯수
-            h = citations[i];//인용 횟수
         }
         
-        System.out.println(h+" "+cnt);
         
-        return h;
+        return answer;
     }
 }
