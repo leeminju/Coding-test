@@ -15,8 +15,8 @@ class Solution {
             
             if(idx2 < cards2.length){
                 if(cards2[idx2].equals(word)){
-                idx2++;
-                continue;
+                    idx2++;
+                    continue;
                 }
             }
             
