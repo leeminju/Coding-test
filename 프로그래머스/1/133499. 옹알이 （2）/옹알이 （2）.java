@@ -15,27 +15,7 @@ class Solution {
             for(int i=0;i<4;i++){
                 String word = list.get(i);
                 if(bab.contains(word)){
-                    int count = 1;
-                    
-                    String temp = bab;
-                    while(true){
-                        int find = temp.indexOf(word);
-                        String splitBab = temp.substring(find + word.length());    
-                    
-                        if(splitBab.contains(word)){
-                            count++;
-                            if(splitBab.indexOf(word) == 0){
-                                count = -1;
-                                break; //연속된 글자
-                            }else{
-                                temp = splitBab; 
-                             }
-                        }else{
-                            break;// 글자 뒤에 같은 글자 없음!
-                        }
-                    }
-                        
-                        
+                    int count = count(bab,word);
                     if(count != -1){    
                         same += word.length()*count;
                     }
@@ -49,5 +29,24 @@ class Solution {
         }
         
         return answer;
+    }
+    
+    int count(String str, String word){
+        int count = 1;
+        while(true){
+            int find = str.indexOf(word);
+            String split = str.substring(find + word.length());//앞에를 자르기    
+                    
+            if(split.contains(word)){
+                count++;
+                if(split.indexOf(word) == 0){
+                    return -1; //연속된 글자
+                }else{   
+                    str = split; 
+                }
+            }else{
+                 return count;
+            }
+        }
     }
 }
