@@ -7,7 +7,7 @@ class Solution {
         for(String key:keymap){
             for(int i=0;i<key.length();i++){
                 char eng=key.charAt(i);
-                if(map.getOrDefault(eng,1000) > i+1){
+                if(map.getOrDefault(eng,101) > i+1){
                     map.put(eng,i+1);
                 }
             }
