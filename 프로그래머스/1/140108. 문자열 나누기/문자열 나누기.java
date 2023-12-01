@@ -5,7 +5,7 @@ class Solution {
         char x = s.charAt(0);
         int same=0;
         int not=0;
-        System.out.println(x);
+        //System.out.println(x);
         
         for(int i=0;i<s.length();i++){
             if(s.charAt(i) == x){
@@ -15,13 +15,13 @@ class Solution {
             }
             
             if(same == not && same > 0){
-               // String split = s.substring(start, i+1);
+            //
                 if(i < s.length()-1){
                     i++;
                     start =i;
                     same = 1;
                     not = 0;
-                    x= s.charAt(i);
+                    x = s.charAt(i);
                     answer++;
                 }
             } 
