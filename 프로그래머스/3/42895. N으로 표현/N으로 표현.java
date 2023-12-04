@@ -2,8 +2,6 @@ import java.util.*;
 
 class Solution {
     public int solution(int N, int number) {
-        boolean find = false;
-        
         if(N == number)
             return 1;
             
@@ -14,21 +12,23 @@ class Solution {
                 sets[1].add(N);// 1번 사용해서 만들 수 있는 수 -> N
                 continue;
             }             
-            sets[i].add(N * makeRepeatOneNum(i));
+            sets[i].add(N * makeRepeatOneNum(i));// 11, 111, 111, 1111
+            
             
             for(int j=1;j<= i-1;j++){
                 for(int num1 :sets[j]){
                     for(int num2 : sets[i-j]){
-                       sets[i].add(num1 * num2);
-                    if(num1 >= num2)
-                        sets[i].add(num1 / num2);
-                    if(num1 > num2)
-                        sets[i].add(num1 - num2);
-                    sets[i].add(num1 + num2);
+                        sets[i].add(num1 * num2);
+                        if(num1 >= num2)
+                            sets[i].add(num1 / num2);
+                        if(num1 > num2)
+                            sets[i].add(num1 - num2);
+                        sets[i].add(num1 + num2);
                     }
                 }
             }
             
+            System.out.println(sets[i]);
             if(sets[i].contains(number)){
                 return i;
             }
