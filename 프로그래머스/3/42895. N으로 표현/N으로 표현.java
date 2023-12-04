@@ -15,7 +15,7 @@ class Solution {
             sets[i].add(N * makeRepeatOneNum(i));// 11, 111, 111, 1111
             
             
-            for(int j=1;j<= i-1;j++){
+            for(int j=1;j< i;j++){
                 for(int num1 :sets[j]){
                     for(int num2 : sets[i-j]){
                         sets[i].add(num1 * num2);
@@ -27,8 +27,7 @@ class Solution {
                     }
                 }
             }
-            
-            System.out.println(sets[i]);
+    
             if(sets[i].contains(number)){
                 return i;
             }
