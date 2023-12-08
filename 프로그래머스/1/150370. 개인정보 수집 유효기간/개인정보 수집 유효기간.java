@@ -2,7 +2,7 @@ import java.util.*;
 class Solution {
     public int[] solution(String today, String[] terms, String[] privacies) {
         List<Integer> list=new ArrayList<>();
-        
+            
         int year = Integer.parseInt(today.substring(0,4));
         int month = Integer.parseInt(today.substring(5,7));
         int day = Integer.parseInt(today.substring(8));
