@@ -1,7 +1,5 @@
 class Solution {
     public int[] solution(String[] park, String[] routes) {
-        int[] answer = {};
-        
         int w = park.length;
         int h = park[0].length();
         int[] start = new int[2];
@@ -20,9 +18,10 @@ class Solution {
             boolean isOk = true;
             
             if(direction.equals("N")){
+                
                 if(start[0] - distance >= 0){
                     while(count <= distance){
-                        if(park[start[0]-(count)].charAt(start[1]) == 'X'){
+                        if(park[start[0]-count].charAt(start[1]) == 'X'){
                             isOk=false;
                             break;
                         }
