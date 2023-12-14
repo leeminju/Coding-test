@@ -5,8 +5,8 @@ class Solution {
         long remove = 0;
         
         while(!s.equals("1")){
-            remove += countChar(s,'0');
             long c = countChar(s,'1');
+            remove += s.length()-c;
             s =Long.toString(c,2);
             count++;
         }
