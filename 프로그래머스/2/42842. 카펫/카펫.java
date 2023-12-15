@@ -3,6 +3,10 @@ class Solution {
         int[] answer = new int[2];
         
         int xy = yellow;
+        //(2 + x)*(2 + y) = yellow + brown
+        //4 + 2x + 2y + xy = yellow + brown
+        // 4 + 2(x+y)= brown
+        //2(x+y) = brown - 4
         int sum = (brown - 4)/2;
         
         for(int i=1;i <= sum/2 ; i++){
