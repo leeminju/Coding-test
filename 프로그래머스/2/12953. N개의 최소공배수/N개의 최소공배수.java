@@ -16,7 +16,6 @@ class Solution {
     }
     
     int gcd(int a,int b){
-        //a > b
         int r = a % b;
         return (r == 0) ? b : gcd(b,r);
     }
