@@ -9,7 +9,7 @@ class Solution {
         }
         
         ArrayList<Integer> list = new ArrayList<>(map.values());
-        Collections.sort(list,Collections.reverseOrder());
+        list.sort((o1, o2) -> o2-o1);
         
         for(int i=0;i<list.size();i++){
             k -= list.get(i);
