@@ -8,37 +8,30 @@ class Solution {
         Queue<Integer> queue = new LinkedList<>(); 
         
         for(int i=0;i<len;i++){
-            set.add(elements[i]);
-            queue.offer(elements[i]);
+            set.add(elements[i]);// 깅이가 1인 부분 수열의 함
+            queue.offer(elements[i]);//큐에 값을 넣기
         }
         
-        System.out.println(set.toString());
         for(int size=2;size<len;size++){
             int count = 0;
-            int sum = 0;
-            int[] array = new int[size];
+            int sum = 0;           
+            Queue<Integer> tempQ= new LinkedList<>();
             
             for(int i=0;i<len+size-1;i++){
                 int temp = queue.poll();
-                array[count] = temp;    
+                tempQ.offer(temp);
                 sum += temp;
                 count++;
                 if(count == size){
                     set.add(sum);
-                    count = size-1;
-                    sum -= array[0];
-                    
-                    for(int j=1;j<size;j++){
-                        array[j-1] = array[j];
-                    }
+                    count = size-1;// 맨 앞에 것만 제거
+                    sum -= tempQ.poll();
                 }
-                queue.offer(temp);
+                queue.offer(temp);//다시 뒤로 넣어주기
             }
-
-            
         }
             
         
-        return set.size() + 1;
+        return set.size() + 1;//원래 길이 만큼의 부분수열= 1개
     }
 }
