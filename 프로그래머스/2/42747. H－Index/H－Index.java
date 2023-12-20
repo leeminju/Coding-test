@@ -2,7 +2,6 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] citations) {
-        int cnt = 0;// 0 ~ n  사이
         int h = 0;
         int n = citations.length;
         
