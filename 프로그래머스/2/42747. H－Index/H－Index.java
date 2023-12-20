@@ -11,6 +11,7 @@ class Solution {
                
         for(int i=0;i<n;i++)
         {
+            // n - i = citations[i]번 이상 인용된 논문 수
             if(citations[i] > n-i){ 
                 if(h < n-i){
                     h = n-i;
