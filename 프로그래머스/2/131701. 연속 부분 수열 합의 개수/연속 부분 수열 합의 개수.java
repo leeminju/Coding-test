@@ -8,7 +8,7 @@ class Solution {
         Queue<Integer> queue = new LinkedList<>(); 
         
         for(int i=0;i<len;i++){
-            set.add(elements[i]);// 깅이가 1인 부분 수열의 함
+            set.add(elements[i]);// 길이가 1인 부분 수열의 함
             queue.offer(elements[i]);//큐에 값을 넣기
         }
         
