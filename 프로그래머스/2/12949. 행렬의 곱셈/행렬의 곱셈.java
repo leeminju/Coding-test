@@ -8,7 +8,6 @@ class Solution {
                     answer[i][k] += arr1[i][j] * arr2[j][k];     
                 }
             }
-            
         }
         
         
