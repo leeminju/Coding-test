@@ -7,9 +7,7 @@ class Solution {
         for(int i=0;i<discount.length;i++){
             if(i >= 10){
                 String remove = discount[i-10]; 
-                if(map.containsKey(remove)){
-                    map.put(remove,map.get(remove)-1);
-                }
+                map.put(remove,map.get(remove)-1);
             }
             
             String key = discount[i];
