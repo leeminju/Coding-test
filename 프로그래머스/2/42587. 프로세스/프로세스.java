@@ -24,7 +24,6 @@ class Solution {
             q.offer(node);
         }
         
-        
         while(!q.isEmpty()){
             Node node = q.poll();
             
