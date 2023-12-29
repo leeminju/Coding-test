@@ -17,6 +17,7 @@ class Solution {
                     break;
                 }
             }
+            
             answer = Math.max(answer,count);
             
         }
@@ -27,10 +28,11 @@ class Solution {
     
     void permutation(int[][] arr, int depth, int n) {
         if (depth == n) {
-             result.add(arr.clone());
+            result.add(arr.clone());
             return;
         }
- 
+    
+     
         for (int i=depth; i<n; i++) {
             swap(arr, depth, i);
             permutation(arr, depth + 1, n);
@@ -43,5 +45,6 @@ class Solution {
         arr[depth] = arr[i].clone();
         arr[i] = temp.clone();
     }
-
+    
+    //https://bcp0109.tistory.com/14
 }
