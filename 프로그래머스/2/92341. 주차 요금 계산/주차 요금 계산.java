@@ -2,7 +2,7 @@ import java.util.*;
 class Solution {
     public int[] solution(int[] fees, String[] records) {
         int[] answer = {};
-        Map<String,Record> map = new TreeMap<>();
+        Map<String,Record> map = new TreeMap<>();//오름차순 정렬
         
         for(String record:records){
             String[] rec=record.split(" ");
@@ -39,8 +39,9 @@ class Solution {
             if(totalTime <= fees[0]){
                 fee = fees[1];
             }else{
-                double value = (double)(totalTime - fees[0])/fees[2];
-                int cal = (value - (int)value == 0) ? (int)value : (int)value + 1;
+              //  double value = (double)(totalTime - fees[0])/fees[2];
+              //  int cal = (value - (int)value == 0) ? (int)value : (int)value + 1;
+                int cal = (int) Math.ceil((double)(totalTime - fees[0])/fees[2]);
                 fee = fees[1] + (cal) * fees[3];
             }   
             answer[index++] = fee;
