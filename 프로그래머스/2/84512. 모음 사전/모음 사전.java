@@ -21,7 +21,7 @@ class Solution {
                 answer = Math.min(answer,count);
                 return;
             }
-
+            //System.out.println(str);
             dfs(alphabets,target,depth+1,str);
             str.deleteCharAt(str.length()-1);
         }
