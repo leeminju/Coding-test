@@ -1,23 +1,35 @@
 import java.util.PriorityQueue;
+
+
+class Node{
+    int index;
+    int value;
+    
+    public Node(int index,int value){
+        this.index = index;
+        this.value = value;
+    }
+}
+
 class Solution {
     public int[] solution(int[] numbers) {
         int[] answer = new int[numbers.length];
         //[index,value]
-        PriorityQueue<int[]> queue = new PriorityQueue<>((o1, o2) -> o1[1] - o2[1]);
+        PriorityQueue<Node> queue = new PriorityQueue<>((o1, o2) -> o1.value - o2.value);
         
         for(int i=0;i<numbers.length;i++)
         {
         	int value=numbers[i];
         	
-            while (!queue.isEmpty() && queue.peek()[1] < value) {
-            	answer[queue.poll()[0]]=value;
+            while (!queue.isEmpty() && queue.peek().value < value) {
+            	answer[queue.poll().index]=value;
             }
         	
-        	queue.add(new int[]{i,value});
+        	queue.add(new Node(i,value));
         }
         
         while (!queue.isEmpty())
-            answer[queue.poll()[0]] = -1;
+            answer[queue.poll().index] = -1;
         
         return answer;
     }
