@@ -12,7 +12,7 @@ class Solution {
         
         while(!q.isEmpty()){
             Node node = q.poll();
-            double sum = node.sum;
+            int sum = node.sum;
             int count = node.count;
  
             
@@ -21,10 +21,10 @@ class Solution {
             }
          
             if(sum > x){
-              if(sum/3 == (int)sum/3){ 
+              if(sum%3 == 0){ 
                 q.offer(new Node(sum / 3,count+1));
               }
-              if(sum/2 == (int)sum/2){ 
+              if(sum%2 == 0){ 
                 q.offer(new Node(sum / 2,count+1));
               }
               q.offer(new Node(sum - n,count+1));
@@ -34,10 +34,10 @@ class Solution {
         return answer;
     } 
     class Node {
-        double sum;
+        int sum;
         int count;
         
-        Node(double sum, int count){
+        Node(int sum, int count){
             this.sum = sum;
             this.count = count;
         }
