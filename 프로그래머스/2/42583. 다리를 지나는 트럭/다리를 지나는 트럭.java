@@ -10,7 +10,7 @@ class Solution {
         //1 + bridge_length 초에 다리 통과
         
         
-        while(i < truck_weights.length){
+        while(!queue.isEmpty()){
             sec++;
 
             if(!queue.isEmpty() && sec == queue.peek().endTime){
@@ -31,13 +31,9 @@ class Solution {
                 i++;
             }
  
-            //모든 트럭이 큐(다리)를 다 통과했다면 시간 반환 
-            if(queue.isEmpty()){
-                return sec;
-            }
         }
         
-        return 0;
+        return sec;
     }
     
     class Truck{
