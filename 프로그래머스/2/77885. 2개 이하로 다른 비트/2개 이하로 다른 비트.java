@@ -13,7 +13,7 @@ class Solution {
                 int index = num.lastIndexOf("0");// 뒤에서 처음으로 0이 나오는 index
      
                 //0이 없을 경우
-                if(!num.contains("0")){
+                if(index == -1){
                     sb.insert(0,"0");//맨앞에 0 추가
                     index = 0;
                 }
