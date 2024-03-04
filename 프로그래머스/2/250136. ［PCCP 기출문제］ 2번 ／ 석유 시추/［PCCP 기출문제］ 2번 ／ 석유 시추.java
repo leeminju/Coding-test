@@ -8,7 +8,6 @@ class Solution {
         int answer = 0;
         n = land.length;//세로
         m = land[0].length;//가로
-        int index = 2;
         int[] arr = new int[m];//시추관을 수직으로 뚫었을 때 위치 당 뽑을 수 잇는 석유량 
         
         for(int i=0;i<n;i++){
@@ -16,13 +15,13 @@ class Solution {
                 if(land[i][j] == 1){
                     starty= m;
                     endy = 0;
-                    int count = find(i,j,index);
-                    // 덩어리의 가로 시작부터 끝까지 
+                    int count = find(i,j,-1);
+                    //연결된 덩어리에 0,1이 아닌 값(-1)을 바꿔주고 한 덩어리의 크기 계산
                     
+                    // 덩어리의 가로 시작부터 끝까지 
                     for(int k=starty;k<=endy;k++){
-                        arr[k] += count;//연결된 덩어리에 같은 숫자(1이 아닌 숫자)로 값을 바꿔주고 한 덩어리의 크기 계산
+                        arr[k] += count;
                     }
-                    index++;// 다음 덩어리는 증가된 숫자 저장되게함(중복 방지)
                 }
             }
         }
