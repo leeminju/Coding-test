@@ -34,15 +34,13 @@ class Solution {
                 if(count[i][j] > count[j][i]) //i가 j에게 준 선물 수 > j가 i에게 준 선물 수
                 {
                     arr[i]++;                   
-                }else if(count[i][j] == count[j][i] && i<j){
+                }else if(count[i][j] == count[j][i]){
                     // 사람이 선물을 주고받은 기록이 하나도 없거나 주고받은 수가 같다면
                     int valueI = giveMap.getOrDefault(friends[i],0) - takeMap.getOrDefault(friends[i],0);//i의 선물지수
                     int valueJ = giveMap.getOrDefault(friends[j],0) - takeMap.getOrDefault(friends[j],0);//j의 선물지수
                     
                     if(valueI > valueJ){
                         arr[i]++;
-                    }else if(valueI < valueJ){
-                        arr[j]++;
                     }
                 }
             }
