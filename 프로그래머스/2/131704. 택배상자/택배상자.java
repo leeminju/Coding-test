@@ -7,9 +7,9 @@ class Solution {
         //보조 컨테이너
         Stack<Integer> sub = new Stack<>();
             
-        int count = 1;
-        for(int i=0;i<order.length;i++){
-            main.offer(count++);
+        ;
+        for(int i=1;i<=order.length;i++){
+            main.offer(i);
         }
 
         int index = 0;
