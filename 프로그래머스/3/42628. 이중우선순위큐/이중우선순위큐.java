@@ -13,22 +13,20 @@ class Solution {
                 minHeap.offer(num);
                 maxHeap.offer(num);    
             }else if(op[0].equals("D")){
-                if(num == 1 && !minHeap.isEmpty()){
+                if(num == 1){
                     //최댓값 삭제
                     int max = maxHeap.poll();
-                    minHeap.remove(max);
-                }else if(num == -1  && !maxHeap.isEmpty()){
+                    minHeap.delete(max);
+                }else{
                     //최솟값 삭제
                     int min = minHeap.poll();
-                    maxHeap.remove(min);
+                    maxHeap.delete(min);
                 }
             }
         }
         
-        if(!minHeap.isEmpty() && !maxHeap.isEmpty()){
-            answer[0]=maxHeap.poll();
-            answer[1]=minHeap.poll();
-        }
+        System.out.println(minHeap.toString());
+        System.out.println(maxHeap.toString());
         
         return answer;
     }
