@@ -10,15 +10,12 @@ class Solution {
                     
             temp += A.charAt(A.length()-1);
 
-            for(int i=0;i<A.length()-1;i++){
-                char c= A.charAt(i);
-                temp += c;
-            }
+            temp += A.substring(0,A.length()-1);
             
             if(temp.equals(B)){
                 return count;
             }
-            System.out.println(count+" "+temp);
+            
             A = temp;
             count++;
         }
