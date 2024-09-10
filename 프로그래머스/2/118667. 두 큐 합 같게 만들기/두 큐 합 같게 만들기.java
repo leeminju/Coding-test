@@ -14,35 +14,33 @@ class Solution {
             return -1;
         }
 
-        Queue<Long> q1 = new LinkedList<>();
-        Queue<Long> q2 = new LinkedList<>();
-        long half = 0;
+        Queue<Integer> q1 = new LinkedList<>();
+        Queue<Integer> q2 = new LinkedList<>();
         
         for(int i=0;i<queue1.length;i++){
-            q1.offer((long)queue1[i]);
-            q2.offer((long)queue2[i]);
+            q1.offer(queue1[i]);
+            q2.offer(queue2[i]);
         }
-        
-        half = (sum1 + sum2)/2;
+
         
         int count = 0;
         while(true){
-            if(count > (queue1.length*3)-3){
+            if(count > (queue1.length*2)+2){
                 return -1;
             }
             
             if(sum1 > sum2){
-                long num = q1.poll();
+                int num = q1.poll();
                 q2.offer(num);
             
-                sum1 -= num;
-                sum2 += num;
+                sum1 -= (long)num;
+                sum2 += (long)num;
             }else if(sum1 < sum2){
-                long num = q2.poll();
+                int num = q2.poll();
                 q1.offer(num);
             
-                sum1 += num;
-                sum2 -= num;
+                sum1 += (long)num;
+                sum2 -= (long)num;
             }else{
                 return count;
             }
